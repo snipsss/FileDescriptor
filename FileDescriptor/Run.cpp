@@ -1,16 +1,39 @@
 #include "InterFaceDescriptor.h"
+#include <memory>
 
-int callFileDescriptor()
+#include "UnitTests.h"
+
+
+
+
+void callAllTest()
 {
-	{
+	std::shared_ptr<UnitTests> ptrTest(new UnitTests);
+	ptrTest->openFile_OpenningFile_True();
+
+}
+
+
+
+
+void callFileDescriptor()
+{
+	
+	
+	
+	/*{
 		BaseDesctriptor* ptrBaseDesctriptor = new FileDescriptor;
-		std::string filePath = "C:\\Users\\acer\\source\\repos\\FileDescriptor\\ipList.txt";
-		std::string OutPutFile = "C:\\Users\\acer\\source\\repos\\FileDescriptor\\FileDescriptor\\output.txt";
 		ptrBaseDesctriptor->openFile(filePath);
 		ptrBaseDesctriptor->readFile();
 		ptrBaseDesctriptor->writeInNewFile(OutPutFile);
 		ptrBaseDesctriptor->closeFile();
 		delete ptrBaseDesctriptor;
 	}
-	return 0;
+	*/
+	std::unique_ptr<BaseDesctriptor> ptr(new FileDescriptor);
+	ptr->openFile(mainData::filePath);
+	ptr->readFile();
+	ptr->writeInNewFile(mainData::outputFile);
+	ptr->closeFile();
+
 }

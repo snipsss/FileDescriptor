@@ -1,7 +1,12 @@
 #include <iostream>
+void callAllTest();
+void callFileDescriptor();
 
-int callFileDescriptor();
-int main()
+
+
+
+void main()
 {
+	callAllTest();
 	callFileDescriptor();
 }

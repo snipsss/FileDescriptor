@@ -6,6 +6,13 @@
 
 struct BaseDesctriptor
 {
+
+	BaseDesctriptor() = default;
+	BaseDesctriptor(const BaseDesctriptor& other) = delete;
+	BaseDesctriptor& operator = (const BaseDesctriptor& other) = delete;
+	BaseDesctriptor(const BaseDesctriptor&& other) = delete;
+
+
 	virtual bool openFile(std::string& filepath) = 0;
 	virtual std::vector<std::string> readFile() = 0;
 	virtual bool writeInNewFile(std::string& newPathFile) = 0;

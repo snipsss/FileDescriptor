@@ -16,12 +16,15 @@ bool ValidatorIpAddresses::isValidPart(const std::string& address)
 	return (bufferNumber >= 0 && bufferNumber <= 255);
 }
 
-int ValidatorIpAddresses::isValidIp(const std::string& address)
+bool ValidatorIpAddresses::isValidIp(const std::string& address)
 {
 	int dots = 0;
 	size_t lenghIPaddr = address.length();
-	try{ if (lenghIPaddr == 0 || typeid(address).name() != typeid(std::string).name()) throw 0;}
-	catch (int exe) { std::cerr << "Lenght of Ipaddress is wrong || ipaddress != std::string " << exe << std::endl; }
+	
+	if (lenghIPaddr == 0 || typeid(address).name() != typeid(std::string).name())
+	{
+		std::cerr << "Lenght of Ipaddress is wrong || ipaddress != std::string " << std::endl;
+	}
 	int counter = 0;
 	for (int i = 0; i < lenghIPaddr; i++)
 		if (address[i] == '.') { counter++; }

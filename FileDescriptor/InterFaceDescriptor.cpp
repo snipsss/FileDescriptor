@@ -18,9 +18,9 @@ bool FileDescriptor::openFile(std::string& filepath)
     }
     else
     {
-        std::cerr << "We cant find file name or file does not exist! " << std::endl;   
+        std::cerr << "We cant find file path  or file does not exist! " << std::endl;   
+        closeFile();
         return false;
-        FileDescriptor::closeFile();
     }
 }
 
@@ -39,24 +39,24 @@ std::vector <std::string> FileDescriptor::readFile()
 bool FileDescriptor::writeInNewFile(std::string& newPathFile)
 {
     std::ofstream outPutFile(newPathFile, std::ios::out | std::ios::binary);
-    size_t bufferIpVecSize = m_IpVector.size();
-    std::cout << "size buffer<> is " << bufferIpVecSize << std::endl;  
+   
+    std::cout << "size buffer<> is " << m_IpVector.size() << std::endl;
     if (outPutFile.is_open())
     {
         std::cout << "newPathFile() exists and successfully openned!" << std::endl;
-        for (int i = 0; i < bufferIpVecSize; i++)
+        for (std::vector<std::string>::iterator iter = m_IpVector.begin(); iter != m_IpVector.end(); iter++)
         {
-            if (ValidatorIpAddresses::isValidIp(m_IpVector[i]) == 1)
+            if (ValidatorIpAddresses::isValidIp(*iter))
             {
-                outPutFile << " ip is valid! -> " << "\t" << m_IpVector[i] << std::endl;  
+                outPutFile << " ip is valid! -> " << "\t" << *iter << std::endl;
             }
             else
             {
-                outPutFile << m_IpVector[i] << "\t" << "ip is not valid";
+                outPutFile << *iter << "\t" << "ip is not valid";
             }
         }
-        return true;
         outPutFile.close();
+        return true;
     }
     else
     {
@@ -73,9 +73,5 @@ bool FileDescriptor::closeFile()
         m_file.close();
         return true;
     }
-    else
-    {
-        std::cerr << "We can find File name or file does not exist !" << std::endl; 
-        return false;
-    }
+    
 }

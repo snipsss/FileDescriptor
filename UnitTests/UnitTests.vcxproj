@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{4272bd97-5b2b-4df0-a3bd-ac18e1aec12c}</ProjectGuid>
-    <RootNamespace>FileDescriptor</RootNamespace>
+    <ProjectGuid>{453477bf-211b-4acd-963d-ea30e1bdc7a0}</ProjectGuid>
+    <RootNamespace>UnitTests</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,19 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="InterFaceDescriptor.cpp" />
-    <ClCompile Include="Run.cpp" />
     <ClCompile Include="UnitTests.cpp" />
-    <ClCompile Include="Validator.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="InterFaceDescriptor.h" />
-    <ClInclude Include="UnitTests.h" />
-    <ClInclude Include="Validator.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="output.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
