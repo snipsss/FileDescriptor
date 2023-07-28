@@ -5,7 +5,7 @@ bool ValidatorIpAddresses::isValidPart(const std::string& address)
 {
 	size_t countdigit = address.size();
 	if (countdigit > 3) { return false; }
-	for (int i = 0; i < countdigit; i++)
+	for (unsigned i = 0; i < countdigit; i++)
 	{
 		if ((address[i] >= '0' && address[i] <= '9') == false) { return false; }
 	}
@@ -26,7 +26,7 @@ bool ValidatorIpAddresses::isValidIp(const std::string& address)
 		std::cerr << "Lenght of Ipaddress is wrong || ipaddress != std::string " << std::endl;
 	}
 	int counter = 0;
-	for (int i = 0; i < lenghIPaddr; i++)
+	for (unsigned i = 0; i < lenghIPaddr; i++)
 		if (address[i] == '.') { counter++; }
 	if (counter != 3) { std::cerr << "counter !=3 " << std::endl; }
 	//buffer token  for strtok_s ,otherwise i could use strtok,but my compiler trhow error

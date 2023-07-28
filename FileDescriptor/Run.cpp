@@ -2,6 +2,7 @@
 #include <memory>
 
 #include "UnitTests.h"
+#include "ConfigData.h"
 
 
 
@@ -10,7 +11,7 @@ void callAllTest()
 {
 	std::shared_ptr<UnitTests> ptrTest(new UnitTests);
 	ptrTest->openFile_OpenningFile_True();
-
+	ptrTest->FileDescriptor_CheckingValidness_True_Or_False();
 }
 
 
