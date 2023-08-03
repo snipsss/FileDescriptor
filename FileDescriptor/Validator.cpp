@@ -29,10 +29,10 @@ int ValidatorIpAddresses::isValidIp(const std::string& address)
 	//buffer token  for strtok_s ,otherwise i could use strtok,but my compiler trhow error
 	char* token;
 	const char* convertedIp = address.c_str();
-	char* ptrIp = strtok_s(const_cast<char*>(convertedIp), ".", &token);
+	char* ptrIp = strtok_l(const_cast<char*>(convertedIp), ".", &token);
 	while (ptrIp)
 	{
-		if (isValidPart(ptrIp)){ptrIp = strtok_s(nullptr, ".", &token);
+		if (isValidPart(ptrIp)){ptrIp = strtok_l(nullptr, ".", &token);
 		if (ptrIp != nullptr){++dots;}
 		}else{break;}
 	}

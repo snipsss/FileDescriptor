@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/FILEDESCRIPTOR.dir/InterFaceDescriptor.cpp.o CMakeFiles/FILEDESCRIPTOR.dir/Main.cpp.o CMakeFiles/FILEDESCRIPTOR.dir/Run.cpp.o CMakeFiles/FILEDESCRIPTOR.dir/Validator.cpp.o -o bin/FILEDESCRIPTOR 
