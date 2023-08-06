@@ -9,7 +9,7 @@
 
 bool FileDescriptor::openFile(std::string& filepath)
 {
-    m_file.open(filepath, std::ios::app | std::ios::binary | std::ios::end);
+    m_file.open(filepath, std::ios_base::in);
 
     if(m_file.is_open())
     {
@@ -38,12 +38,12 @@ std::vector <std::string> FileDescriptor::readFile()
 
 bool FileDescriptor::writeInNewFile(std::string& newPathFile)
 {
-    std::ofstream outPutFile(newPathFile, std::ios::out | std::ios::binary);
+    std::ofstream outPutFile(newPathFile, std::ios::out );
     size_t bufferIpVecSize = m_IpVector.size();
-    std::cout << "size buffer<> is " << bufferIpVecSize << std::endl;  
+    //std::cout << "size buffer<> is " << bufferIpVecSize << std::endl;  
     if (outPutFile.is_open())
     {
-        std::cout << "newPathFile() exists and successfully openned!" << std::endl;
+        std::cout << "outPutFile.txt exists and successfully openned!" << std::endl;
         for (int i = 0; i < bufferIpVecSize; i++)
         {
             if (ValidatorIpAddresses::isValidIp(m_IpVector[i]) == 1)
@@ -52,11 +52,13 @@ bool FileDescriptor::writeInNewFile(std::string& newPathFile)
             }
             else
             {
-                outPutFile << m_IpVector[i] << "\t" << "ip is not valid";
+                outPutFile << " ip is not valid -> " << "\t" << m_IpVector[i] << std::endl;
             }
         }
-        return true;
+       
         outPutFile.close();
+        std::cout << "outPutFile.txt has data, closing...." << std::endl;
+        return true;
     }
     else
     {
@@ -64,6 +66,7 @@ bool FileDescriptor::writeInNewFile(std::string& newPathFile)
         outPutFile.close();
         return false;
     }
+    return 1;
 }
 
 bool FileDescriptor::closeFile()
@@ -71,6 +74,7 @@ bool FileDescriptor::closeFile()
     if(m_file.is_open())
     {
         m_file.close();
+        std::cout << "InputIpFile succsefully closed!" << std::endl;
         return true;
     }
     else

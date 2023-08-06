@@ -4,8 +4,8 @@ int callFileDescriptor()
 {
 	{
 		BaseDesctriptor* ptrBaseDesctriptor = new FileDescriptor;
-		std::string filePath = "C:\\Users\\acer\\source\\repos\\FileDescriptor\\ipList.txt";
-		std::string OutPutFile = "C:\\Users\\acer\\source\\repos\\FileDescriptor\\FileDescriptor\\output.txt";
+		std::string filePath = "/home/valeriikupriianov/Desktop/descriptorLinux/FileDescriptor/ipList.txt";
+		std::string OutPutFile = "/home/valeriikupriianov/Desktop/descriptorLinux/FileDescriptor/outputFile.txt";
 		ptrBaseDesctriptor->openFile(filePath);
 		ptrBaseDesctriptor->readFile();
 		ptrBaseDesctriptor->writeInNewFile(OutPutFile);

@@ -1,5 +1,7 @@
 #include "Validator.h"
 #include <sstream>
+#include <string.h>
+
 
 bool ValidatorIpAddresses::isValidPart(const std::string& address)
 {
@@ -16,7 +18,7 @@ bool ValidatorIpAddresses::isValidPart(const std::string& address)
 	return (bufferNumber >= 0 && bufferNumber <= 255);
 }
 
-int ValidatorIpAddresses::isValidIp(const std::string& address)
+bool ValidatorIpAddresses::isValidIp(const std::string& address)
 {
 	int dots = 0;
 	size_t lenghIPaddr = address.length();
@@ -29,10 +31,10 @@ int ValidatorIpAddresses::isValidIp(const std::string& address)
 	//buffer token  for strtok_s ,otherwise i could use strtok,but my compiler trhow error
 	char* token;
 	const char* convertedIp = address.c_str();
-	char* ptrIp = strtok_l(const_cast<char*>(convertedIp), ".", &token);
+	char* ptrIp = strtok_r(const_cast<char*>(convertedIp), ".", &token);
 	while (ptrIp)
 	{
-		if (isValidPart(ptrIp)){ptrIp = strtok_l(nullptr, ".", &token);
+		if (isValidPart(ptrIp)){ptrIp = strtok_r(nullptr, ".", &token);
 		if (ptrIp != nullptr){++dots;}
 		}else{break;}
 	}
