@@ -1,5 +1,9 @@
 #include <iostream>
+#include <algorithm>
 #include <vector>
+#include <utility>
+
+
 template<typename T>
 auto refer(const T& var) 
 {

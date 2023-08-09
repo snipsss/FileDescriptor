@@ -39,20 +39,27 @@ std::vector <std::string> FileDescriptor::readFile()
 bool FileDescriptor::writeInNewFile(std::string& newPathFile)
 {
     std::ofstream outPutFile(newPathFile, std::ios::out | std::ios::binary);
-   
     std::cout << "size buffer<> is " << m_IpVector.size() << std::endl;
+    for (std::string& str : m_IpVector) {
+        str.erase(std::remove(str.begin(), str.end(), '\r'), str.end());
+    }
+
     if (outPutFile.is_open())
     {
         std::cout << "newPathFile() exists and successfully openned!" << std::endl;
+        
+
+
         for (std::vector<std::string>::iterator iter = m_IpVector.begin(); iter != m_IpVector.end(); iter++)
         {
+    
             if (ValidatorIpAddresses::isValidIp(*iter))
             {
                 outPutFile << " ip is valid! -> " << "\t" << *iter << std::endl;
             }
             else
             {
-                outPutFile << *iter << "\t" << "ip is not valid";
+                outPutFile << " ip is not valid -> " << "\t" << *iter << std::endl;
             }
         }
         outPutFile.close();
@@ -73,5 +80,5 @@ bool FileDescriptor::closeFile()
         m_file.close();
         return true;
     }
-    
+    return true;
 }

@@ -2,6 +2,7 @@
 #define CFG
 
 #include <iostream>
+#include <vector>
 namespace TestConfig
 {
 	static std::string pathname = "C:\\Users\\acer\\Desktop\\new skaaaaaaaatteeeee\\config tg bot";
