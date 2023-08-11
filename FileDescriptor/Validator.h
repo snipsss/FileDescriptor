@@ -1,11 +1,11 @@
 #ifndef VALIDATOR
 #define VALIDATOR
+#include "Result.h"
 #include <iostream>
 
-struct ValidatorIpAddresses
+struct ValidatorIpAddresses final
 {
-	static bool isValidPart(const std::string& address);
-	static bool isValidIp(const std::string& address);
+	static Result isValidIp(const std::string& address);
 };
 
 

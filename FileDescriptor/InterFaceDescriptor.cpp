@@ -6,6 +6,7 @@
 #include <string>
 #include "Validator.h"
 #include <vector>
+#include "Result.h"
 
 bool FileDescriptor::openFile(std::string& filepath)
 {
@@ -53,7 +54,7 @@ bool FileDescriptor::writeInNewFile(std::string& newPathFile)
         for (std::vector<std::string>::iterator iter = m_IpVector.begin(); iter != m_IpVector.end(); iter++)
         {
     
-            if (ValidatorIpAddresses::isValidIp(*iter))
+            if (ValidatorIpAddresses::isValidIp(*iter) == Result::DesctriptorSuccess)
             {
                 outPutFile << " ip is valid! -> " << "\t" << *iter << std::endl;
             }
@@ -73,12 +74,11 @@ bool FileDescriptor::writeInNewFile(std::string& newPathFile)
     }
 }
 
-bool FileDescriptor::closeFile()
+Result FileDescriptor::closeFile()
 {
     if(m_file.is_open())
     {
         m_file.close();
-        return true;
     }
-    return true;
+    return Result::DesctriptorSuccess;
 }

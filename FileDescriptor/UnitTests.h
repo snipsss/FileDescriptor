@@ -11,7 +11,6 @@ class UnitTests : public  FileDescriptor
 public:
 	void openFile_OpenningFile_True();
 	void FileDescriptor_CheckingValidness_True_Or_False();
-
 };
 
 

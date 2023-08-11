@@ -3,7 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
-
+#include "Result.h"
 struct BaseDesctriptor
 {
 
@@ -16,7 +16,7 @@ struct BaseDesctriptor
 	virtual bool openFile(std::string& filepath) = 0;
 	virtual std::vector<std::string> readFile() = 0;
 	virtual bool writeInNewFile(std::string& newPathFile) = 0;
-	virtual bool closeFile() = 0;
+	virtual Result closeFile() = 0;
 	virtual ~BaseDesctriptor(){};
 };
 
@@ -34,7 +34,7 @@ public:
 	bool openFile(std::string& filepath) override;
 	std::vector<std::string> readFile() override;
 	bool writeInNewFile(std::string& newPathFile) override;
-	bool closeFile() override;
+	Result closeFile() override;
 	
 };
 

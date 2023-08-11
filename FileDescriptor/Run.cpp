@@ -1,26 +1,18 @@
 #include "InterFaceDescriptor.h"
 #include <memory>
-
 #include "UnitTests.h"
 #include "ConfigData.h"
 
 
-
-
-void callAllTest()
+void callAllTest() 
 {
-	std::shared_ptr<UnitTests> ptrTest(new UnitTests);
+	std::shared_ptr<UnitTests> ptrTest = std::make_unique<UnitTests>();
 	ptrTest->openFile_OpenningFile_True();
 	ptrTest->FileDescriptor_CheckingValidness_True_Or_False();
 }
 
-
-
-
-void callFileDescriptor()
+void callFileDescriptor() 
 {
-	
-	
 	
 	/*{
 		BaseDesctriptor* ptrBaseDesctriptor = new FileDescriptor;
@@ -31,7 +23,7 @@ void callFileDescriptor()
 		delete ptrBaseDesctriptor;
 	}
 	*/
-	std::unique_ptr<BaseDesctriptor> ptr(new FileDescriptor);
+	std::unique_ptr<BaseDesctriptor> ptr = std::make_unique<FileDescriptor>();
 	ptr->openFile(mainData::filePath);
 	ptr->readFile();
 	ptr->writeInNewFile(mainData::outputFile);
