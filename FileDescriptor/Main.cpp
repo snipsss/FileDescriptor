@@ -1,10 +1,8 @@
-void callAllTest();
-void callFileDescriptor();
-
+#include "PreCaller.h"
 
 int main()
 {
-	callAllTest();
+	//callAllTest();
 	callFileDescriptor();
 
 	return 0;

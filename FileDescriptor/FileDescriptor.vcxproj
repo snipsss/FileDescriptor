@@ -137,13 +137,13 @@
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="InterFaceDescriptor.cpp" />
-    <ClCompile Include="Run.cpp" />
     <ClCompile Include="UnitTests.cpp" />
     <ClCompile Include="Validator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConfigData.h" />
     <ClInclude Include="InterFaceDescriptor.h" />
+    <ClInclude Include="PreCaller.h" />
     <ClInclude Include="Result.h" />
     <ClInclude Include="UnitTests.h" />
     <ClInclude Include="Validator.h" />

@@ -1,14 +1,13 @@
 #ifndef TESTS
 #define TESTS
-
 #include "InterFaceDescriptor.h"
 #include "Validator.h"
 #include "UnitTests.h"
 #include "InterFaceDescriptor.h"
 #include "ConfigData.h"
+#include "Result.h"
 #define __FUNCTION1__ "openFile_OpenningFile_True"
 #define __FUNCTION2__ "FileDescriptor_CheckingValidness_True_Or_False"
-
 
 
 void UnitTests::openFile_OpenningFile_True() 
@@ -37,15 +36,12 @@ void UnitTests::FileDescriptor_CheckingValidness_True_Or_False()
 	bool* result1EmptyAddr = new bool(ValidatorIpAddresses::isValidIp(IpConfig::emptyAddr));
 	bool* result2LocalAddr = new bool(ValidatorIpAddresses::isValidIp(IpConfig::localAddr));
 	bool* result3ZeroAddr = new bool(ValidatorIpAddresses::isValidIp(IpConfig::zeroAddr));
-
 	bool* result4SubnetMask = new bool(ValidatorIpAddresses::isValidIp(IpConfig::subnetMask));
 	bool* result5Vver255Addr = new bool(ValidatorIpAddresses::isValidIp(IpConfig::over255Addr));
 	bool* result6LongIpV6 = new bool(ValidatorIpAddresses::isValidIp(IpConfig::longIpV6));
-
 	bool* result7Over255AllAddr = new bool(ValidatorIpAddresses::isValidIp(IpConfig::over255AllAddr));
 	bool* result8OverThreeDigit = new bool(ValidatorIpAddresses::isValidIp(IpConfig::overThreeDigit));
 	bool* result9RandomV6 = new bool(ValidatorIpAddresses::isValidIp(IpConfig::randomIpV6));
-
 
 	std::cout << "Name: " << __FUNCTION__ << "\t" << "Line: " << __LINE__ << std::endl;
 	std::cout << "Test 1 IpConfig::emptyAddr:  " << *result1EmptyAddr << "\t" << "Line: " << __LINE__ << std::endl;

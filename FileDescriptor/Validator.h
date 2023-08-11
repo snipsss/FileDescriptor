@@ -3,9 +3,10 @@
 #include "Result.h"
 #include <iostream>
 
-struct ValidatorIpAddresses final
+
+struct ValidatorIpAddresses 
 {
-	static Result isValidIp(const std::string& address);
+	 static Result isValidIp(const std::string& address);
 };
 
 
