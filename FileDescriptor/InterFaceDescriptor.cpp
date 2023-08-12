@@ -43,7 +43,6 @@ bool FileDescriptor::writeInNewFile(const std::string& sNewPathFile)
     for (std::string& str : m_IpVector) {
         str.erase(std::remove(std::begin(str), std::end(str), '\r'), str.end());
     }
-
     if (outPutFile.is_open())
     {
         std::cout << "newPathFile() exists and successfully openned!" << std::endl;

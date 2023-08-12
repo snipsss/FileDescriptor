@@ -1,6 +1,5 @@
 #ifndef PRECALLER
 #define PRECALLER
-
 #include "InterFaceDescriptor.h"
 #include <memory>
 #include "UnitTests.h"
@@ -21,7 +20,6 @@ void callFileDescriptor()
 	ptrCallFuction->readFile();
 	ptrCallFuction->writeInNewFile(mainData::outputFile);
 	ptrCallFuction->closeFile();
-
 }
 
 

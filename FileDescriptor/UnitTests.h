@@ -1,8 +1,6 @@
 #ifndef TESTING
 #define TESTING
-#include <iostream>
 #include "InterFaceDescriptor.h"
-#include "Validator.h"
 
 
 

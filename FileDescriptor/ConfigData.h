@@ -14,7 +14,7 @@ namespace TestConfig
 
 namespace mainData
 {
-	const std::string filePath = "C:\\Users\\acer\\source\\repos\\FileDescriptor\\ipList.txt";
+	const std::string filePath = "C:\\Users\\acer\\source\\repos\\FileDescriptor\\FileDescriptor\\ipList.txt";
 	const std::string outputFile = "C:\\Users\\acer\\source\\repos\\FileDescriptor\\FileDescriptor\\output.txt";
 }
 
