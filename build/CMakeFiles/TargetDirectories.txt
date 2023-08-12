@@ -1,0 +1,3 @@
+/home/valeriikupriianov/Desktop/descriptorLinux/FileDescriptor/build/CMakeFiles/FILEDESCRIPTOR.dir
+/home/valeriikupriianov/Desktop/descriptorLinux/FileDescriptor/build/CMakeFiles/edit_cache.dir
+/home/valeriikupriianov/Desktop/descriptorLinux/FileDescriptor/build/CMakeFiles/rebuild_cache.dir

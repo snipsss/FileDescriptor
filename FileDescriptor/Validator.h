@@ -5,7 +5,7 @@
 struct ValidatorIpAddresses
 {
 	static bool isValidPart(const std::string& address);
-	static int isValidIp(const std::string& address);
+	static bool isValidIp(const std::string& address);
 };
 
 
